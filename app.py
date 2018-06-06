@@ -22,7 +22,7 @@ import numpy as np
 #################################################
 # Database Setup
 #################################################
-engine = create_engine("sqlite:///DB/belly_button_biodiversity.sqlite")
+engine = create_engine("belly_button_biodiversity.sqlite")
 
 # Reflect DB Contents using SQL ALchemy
 Base = automap_base()
@@ -62,7 +62,7 @@ def otu():
     results = session.query(otu_table).lowest_taxonomic_unit_found.all()
 
     otu_list = list(np.ravel(results))
-    
+
     return jsonify(otu_list)
     # results = results.all()
 
@@ -80,7 +80,7 @@ def otu():
 @app.route('/metadata/<sample>')
 def sample_metadata(sample):
     results = session.query(metadata_table.SAMPLEID, metadata_table.ETHNICITY,metadata_table.GENDER, metadata_table.AGE, metadata_table.LOCATION, metadata_table.BBTYPE).\
-        filter(metadata_table.SAMPLEID == sample[3:]).all()  
+        filter(metadata_table.SAMPLEID == sample[3:]).all()
     new_meta = {}
     for result in results:
         new_meta['SAMPLEID'] = result[0]
@@ -88,7 +88,7 @@ def sample_metadata(sample):
         new_meta['GENDER'] = result[2]
         new_meta['AGE'] = result[3]
         new_meta['LOCATION'] = result[4]
-        new_meta['BBTYPE'] = result[5]    
+        new_meta['BBTYPE'] = result[5]
 
     return jsonify(new_meta)
 
