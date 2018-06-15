@@ -22,7 +22,7 @@ import numpy as np
 #################################################
 # Database Setup
 #################################################
-engine = create_engine("sqlite:///DB/belly_button_biodiversity.sqlite")
+engine = create_engine("belly_button_biodiversity.sqlite.sql")
 
 # Reflect DB Contents using SQL ALchemy
 Base = automap_base()
