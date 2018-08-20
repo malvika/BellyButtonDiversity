@@ -125,8 +125,6 @@ Use Plotly.js to build interactive charts for your dashboard.
 
   * Create a function called `optionChanged` to handle the change event when a new sample is selected (i.e. fetch data for the newly selected sample).
 
-  ![dropdown](Images/dropdown.png)
-
 * Create a PIE chart that uses data from your routes `/samples/<sample>` and `/otu` to display the top 10 samples.
 
   * Use the Sample Value as the values for the PIE chart
@@ -137,7 +135,6 @@ Use Plotly.js to build interactive charts for your dashboard.
 
   * Use `Plotly.restyle` to update the chart whenever a new sample is selected
 
-  ![PIE Chart](Images/pie_chart.png)
 
 * Create a Bubble Chart that uses data from your routes `/samples/<sample>` and `/otu` to plot the **Sample Value** vs the **OTU ID** for the selected sample.
 
@@ -153,7 +150,6 @@ Use Plotly.js to build interactive charts for your dashboard.
 
   * Use `Plotly.restyle` to update the chart whenever a new sample is selected
 
-  ![Bubble Chart](Images/bubble_chart.png)
 
 * Display the sample metadata from the route `/metadata/<sample>`
 
