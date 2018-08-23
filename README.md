@@ -6,7 +6,7 @@ Used Flask to design an API for your dataset and to serve the HTML and JavaScrip
 
 * First, create a template called `index.html` for your dashboard landing page. Use the Bootstrap grid system to create the structure of the dashboard page.
 
-* Next, create the following routes for your api.
+* Next, created the following routes for my api.
 
 ```python
 @app.route("/")
@@ -113,46 +113,11 @@ Used Flask to design an API for your dataset and to serve the HTML and JavaScrip
 
 Use Plotly.js to build interactive charts for your dashboard.
 
-* Use the route `/names` to populate a dropdown select element with the list of sample names.
+* Used the route `/names` to populate a dropdown select element with the list of sample names.
 
-  * Use `document.getElementById`, `document.createElement` and `append` to populate the create option elements and append them to the dropdown selector.
+* Created a Bubble Chart that uses data from your routes `/samples/<sample>` and `/otu` to plot the **Sample Value** vs the **OTU ID** for the selected sample.
 
-  * Use the following HTML tag for the dropdown selector
+* Displayed the sample metadata from the route `/metadata/<sample>`
 
-  ```html
-  <select id="selDataset" onchange="optionChanged(this.value)"></select>
-  ```
-
-  * Create a function called `optionChanged` to handle the change event when a new sample is selected (i.e. fetch data for the newly selected sample).
-
-* Create a PIE chart that uses data from your routes `/samples/<sample>` and `/otu` to display the top 10 samples.
-
-  * Use the Sample Value as the values for the PIE chart
-
-  * Use the OTU ID as the labels for the pie chart
-
-  * Use the OTU Description as the hovertext for the chart
-
-  * Use `Plotly.restyle` to update the chart whenever a new sample is selected
-
-
-* Create a Bubble Chart that uses data from your routes `/samples/<sample>` and `/otu` to plot the **Sample Value** vs the **OTU ID** for the selected sample.
-
-  * Use the OTU IDs for the x values
-
-  * Use the Sample Values for the y values
-
-  * Use the Sample Values for the marker size
-
-  * Use the OTU IDs for the marker colors
-
-  * Use the OTU Description Data for the text values
-
-  * Use `Plotly.restyle` to update the chart whenever a new sample is selected
-
-
-* Display the sample metadata from the route `/metadata/<sample>`
-
-  * Display each key/value pair from the metadata JSON object somewhere on the page
-
-  * Update the metadata for each sample that is selected
+## Result
+![project.png](project.png)
